@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои проекты на Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #4a5568;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        
+        .project-list {
+            list-style: none;
+            counter-reset: project-counter;
+        }
+        
+        .project-item {
+            background: #f7fafc;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            counter-increment: project-counter;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .project-item::before {
+            content: counter(project-counter);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .project-title {
+            color: #2d3748;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .project-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .tech-tag.python {
+            background: #bee3f8;
+            color: #2b6cb0;
+        }
+        
+        .tech-tag.web {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .tech-tag.ai {
+            background: #c6f6d5;
+            color: #276749;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Мой виш-лист проектов на Python</h1>
+        <p class="subtitle">Идеи для реализации и изучения новых технологий</p>
+        
+        <ol class="project-list">
+            <li class="project-item">
+                <div class="project-title">Парсер вакансий с автоматическим составлением отчёта</div>
+                <p class="project-description">Система для сбора вакансий с популярных площадок, анализа требований и автоматического формирования отчётов по трендам рынка труда.</p>
+                <div class="project-tech">
+                    <span class="tech-tag python">Python</span>
+                    <span class="tech-tag web">BeautifulSoup</span>
+                    <span class="tech-tag web">Requests</span>
+                    <span class="tech-tag web">Pandas</span>
+                </div>
+            </li>
+            
+            <li class="project-item">
+                <div class="project-title">Конвертер голоса в текст с выделением ключевых фраз</div>
+                <p class="project-description">Приложение для преобразования аудиозаписей в текст с интеллектуальным выделением ключевых моментов и составлением краткого содержания.</p>
+                <div class="project-tech">
+                    <span class="tech-tag python">Python</span>
+                    <span class="tech-tag ai">SpeechRecognition</span>
+                    <span class="tech-tag ai">NLP</span>
+                    <span class="tech-tag web">FastAPI</span>
+                </div>
+            </li>
+            
+            <li class="project-item">
+                <div class="project-title">Веб-приложение для совместного редактирования кода онлайн</div>
+                <p class="project-description">Платформа для real-time совместной работы над кодом с подсветкой синтаксиса, версионированием и возможностью запуска кода.</p>
+                <div class="project-tech">
+                    <span class="tech-tag python">Python</span>
+                    <span class="tech-tag web">WebSockets</span>
+                    <span class="tech-tag web">Django</span>
+                    <span class="tech-tag web">Docker</span>
+                </div>
+            </li>
+            
+            <li class="project-item">
+                <div class="project-title">Анализ тональности отзывов о товарах</div>
+                <p class="project-description">ML-система для автоматического определения эмоциональной окраски отзывов и визуализации статистики по продуктам.</p>
+                <div class="project-tech">
+                    <span class="tech-tag python">Python</span>
+                    <span class="tech-tag ai">TensorFlow</span>
+                    <span class="tech-tag ai">Scikit-learn</span>
+                    <span class="tech-tag web">Streamlit</span>
+                </div>
+            </li>
+        </ol>
+        
+        <footer>
+            <p>Обновлено: март 2024 | Проекты из курса по Git и GitHub</p>
+            <p>Ветка: <strong>develop</strong> | Файл создан для демонстрации работы с ветками</p>
+        </footer>
+    </div>
+</body>
+</html>
